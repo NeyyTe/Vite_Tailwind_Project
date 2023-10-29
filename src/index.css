@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text: 0 0% 0%;
+    --background: 186 100% 92%;
+    --primary: 215 98% 24%;
+    --secondary: 244 94% 94%;
+    --accent: 35 99% 45%;
+  }
+  .dark {
+    --text: 0 0% 100%;
+    --background: 186 100% 8%;
+    --primary: 215 98% 76%;
+    --secondary: 244 94% 6%;
+    --accent: 35 99% 55%;
+  }
+}
+
+/**Reset universel*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  /* outline: 2px solid red;  */
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  overflow-y: scroll; /* Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition*/
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-break: break-word;
+}
+
+h1,
+h3 {
+  color: var(--text);
+  font-family: "Cinzel Decorative", cursive;
+}
+
+p {
+  line-height: 150%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--black);
+  background-color: var(--black);
+  word-break: break-word;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+  transition: all 2s ease;
+}
+
+/**Fonts **/
+
+/*Cinzel*/
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap");
+
+/*Poppins*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
