@@ -1,17 +1,29 @@
+
+/*Poppins*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/*Cinzel*/
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --text: 12 100% 75%;
-    --background: 0 17% 8%;
-    --primary: 215 98% 24%;
-    --secondary: 244 94% 94%;
-    --accent: 35 99% 45%;
-    --border: 7 55% 28%;
+    --text: hsl(10, 86%, 89%);
+    --background: hsl(10, 24%, 10%);
+
+    --primary: hsl(10, 78%, 54%);
+    --primaryHover: hsl(11, 82%, 59%);
+
+    --uiNormal: hsl(5, 48%, 15%);
+    --uiHover: hsl(4, 64%, 19%);
+    --uiFocus: hsl(5, 62%, 23%);
+
+    --border: hsl(7, 55%, 28%);
+    --white: #fff;
+    --black:rgb(0, 0, 0);
   }
-  .dark {
+  .light {
     --text: 0 0% 100%;
     --background: 186 100% 8%;
     --primary: 215 98% 76%;
@@ -27,12 +39,10 @@
       rgba(24, 17, 17, 1) 75%
     );
   }
-  @font-face {
-    font-family: "Poppins", sans-serif;
-    src: url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-    font-family: "Cinzel";
-    src: url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap");
+  p {
+    line-height: 150%;
+    font-family: "Poppins";
   }
 }
 
@@ -46,7 +56,7 @@
   scroll-behavior: smooth;
   text-decoration: none;
   list-style: none;
-  border: none;
+
   /* outline: 2px solid red;  */
 }
 
@@ -56,15 +66,6 @@ body {
   height: 100%;
 
   /* overflow-y: scroll; Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition */
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
 }
 
 p,
@@ -77,36 +78,18 @@ h6 {
   word-break: break-word;
 }
 
-h1,
-h3 {
-  color: var(--text);
-  font-family: "Cinzel Decorative", cursive;
-}
-
-p {
-  line-height: 150%;
-}
-
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px var(--black);
-  background-color: var(--black);
+  box-shadow: inset 0 0 5px var(--background);
+  background-color: var(--background);
   word-break: break-word;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--primary);
   border-radius: 10px;
   transition: all 2s ease;
 }
-
-/**Fonts **/
-
-/*Cinzel*/
-/* @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap"); */
-
-/*Poppins*/
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
