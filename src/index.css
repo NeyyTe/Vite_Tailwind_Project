@@ -1,4 +1,3 @@
-
 /*Poppins*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 /*Cinzel*/
@@ -20,8 +19,8 @@
     --uiFocus: hsl(5, 62%, 23%);
 
     --border: hsl(7, 55%, 28%);
-    --white: #fff;
-    --black:rgb(0, 0, 0);
+    --white: #fff8f7;
+    --black: rgb(0, 0, 0);
   }
   .light {
     --text: 0 0% 100%;
@@ -65,7 +64,8 @@ body {
   width: 100%;
   height: 100%;
 
-  /* overflow-y: scroll; Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition */
+  overflow-y: scroll;
+  /*Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition */
 }
 
 p,

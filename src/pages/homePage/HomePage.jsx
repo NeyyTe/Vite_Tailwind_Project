@@ -9,6 +9,7 @@ import Cards from "../../components/Cards/Cards";
 function HomePage() {
   // const [textSearchInput, setSearchInput] = useState("");
   const [category, setCategory] = useState([]);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,14 +18,15 @@ function HomePage() {
           "https://www.themealdb.com/api/json/v1/1/categories.php"
         );
         // Mettre à jour l'état avec les données de la réponse
-        setCategory(response.data);
-        console.log(response.data);
+        const result = response.data;
+        setCategory(result);
+        
       } catch (error) {
         console.error("Erreur lors de la récupération des données:", error);
       }
     };
 
-    // Appelez la fonction fetchData
+    // Appel de la fonction fetchData
     fetchData();
   }, []); // Le tableau vide assure que cela ne s'exécute qu'une fois lors du montage du composant
 
@@ -34,7 +36,7 @@ function HomePage() {
         a.strCategory.localeCompare(b.strCategory)
       )
     : [];
-
+  console.log(sortedCategories);
   return (
     <>
       <Header />

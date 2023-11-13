@@ -39,6 +39,7 @@ export default {
       white:"var(--white)",
     },
   }, 
-   darkMode:'class',
+
+  
   plugins: [],
 };
