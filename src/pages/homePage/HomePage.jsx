@@ -9,7 +9,7 @@ import Cards from "../../components/Cards/Cards";
 function HomePage() {
   // const [textSearchInput, setSearchInput] = useState("");
   const [category, setCategory] = useState([]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,7 +20,6 @@ function HomePage() {
         // Mettre à jour l'état avec les données de la réponse
         const result = response.data;
         setCategory(result);
-        
       } catch (error) {
         console.error("Erreur lors de la récupération des données:", error);
       }
@@ -83,9 +82,15 @@ function HomePage() {
               <p>Catégories</p>
             </div>
 
-            <div className="grid place-items-center mt-8 p-4 ">
+            <div className="w-full grid  mt-8 p-4 ">
               {sortedCategories.map((category) => (
-                <Cards key={category.idCategory} {...category} />
+            <Cards
+            key={category.idCategory}
+            id={category.idCategory}
+            title={category.strCategory}
+            imageUrl={category.strCategoryThumb}
+            link={`/categories/${category.strCategory}`} // Exemple de lien vers une page de détails
+          />
               ))}
             </div>
           </div>
