@@ -41,7 +41,7 @@ function HomePage() {
       <Header />
       <section className="  relative h-90dvh bg-right bg-no-repeat bg-contain bg-[url('../../../src/assets/bgShape.webp')]">
         <div className=" container h-full p-2 mx-auto grid grid-cols-2 place-items-center">
-          <div className="  text-text space-y-8 w-66%">
+          <div className="  text-text space-y-8 ">
             <h1 className=" text-7xl font-cinzel font-semibold ">
               Réveiller le chef qui est en vous
             </h1>
