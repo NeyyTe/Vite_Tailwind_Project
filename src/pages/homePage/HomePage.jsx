@@ -82,7 +82,7 @@ function HomePage() {
               <p>Catégories</p>
             </div>
 
-            <div className="w-full grid  mt-8 p-4 ">
+            <div className="w-full gridCategory  mt-8 p-4 ">
               {sortedCategories.map((category) => (
             <Cards
             key={category.idCategory}
