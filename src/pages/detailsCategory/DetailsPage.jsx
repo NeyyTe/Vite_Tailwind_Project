@@ -1,130 +1,3 @@
-// import Header from "../../components/header/Header";
-// import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import axios from "axios";
-
-// export default function DetailsPage() {
-//   const [mealDetails, setMealDetails] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const { id } = useParams();
-
-//   useEffect(() => {
-//     const fetchMealDetails = async () => {
-//       try {
-//         axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-//           .then((values) => {
-//             setMealDetails(values.data);
-//             setLoading(false);
-//         console.log(values.data)
-//           });
-//       } catch (e) {
-//         console.error("ERREUR OMFG ", e);
-//       }
-//     };
-//     fetchMealDetails();
-//   }, [id,setMealDetails]);
-
-//   // if (!loading) {
-//   //   return <div>Loading...</div>;
-//   // } else {
-//   //   return (
-//   //     <>
-//   //       <Header />
-
-//   //       <div className="text-text">
-
-//   //           <div key={mealDetails.idMeal}>
-//   //             <h1>{mealDetails.strMeal}</h1>
-//   //             <img src={mealDetails.strMealThumb} alt={mealDetails.strMeal} />
-//   //             <p>{mealDetails.strInstructions}</p>
-//   //           </div>
-
-//   //       </div>
-//   //     </>
-//   //   );
-//   // }
-//   if (!loading) {
-//     return <div className="text-text">Loading...</div>;
-//   } else {
-//     return (
-//       <>
-//         <Header />
-//         <div className="text-text">
-//           {mealDetails.meals ? (
-//             mealDetails.meals.map((meal) => (
-//               <div key={meal.idMeal}>
-//                 <h1>{meal.strMeal}</h1>
-//                 <img src={meal.strMealThumb} alt={meal.strMeal} />
-//                 <p>{meal.strInstructions}</p>
-//               </div>
-//             ))
-//           ) : (
-//             <div>Les détails du repas ne sont pas disponibles.</div>
-//           )}
-//         </div>
-//       </>
-//     );
-//   }
-
-// }
-
-// import Header from "../../components/header/Header";
-// import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import axios from "axios";
-
-// export default function DetailsPage() {
-//   const [mealDetails, setMealDetails] = useState({});
-//   const [loading, setLoading] = useState(true);
-//   const { id } = useParams();
-
-//   useEffect(() => {
-//     const fetchMealDetails = async () => {
-//       try {
-//         const response = await axios.get(
-//           `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-//         );
-//         setMealDetails(response.data);
-//         setLoading(false);
-//         console.log(response.data);
-//       } catch (e) {
-//         console.error("ERREUR OMFG ", e);
-//       }
-//     };
-//     fetchMealDetails();
-//   }, [id]);
-
-//   return (
-//     <>
-//       <Header />
-
-//       <div className="text-text max-w-7xl mx-auto">
-//         {loading ? (
-//           <div>Loading...</div>
-//         ) : (
-//           <div
-//             className="grid grid-cols-2 gap-4 p-12"
-//             key={mealDetails.meals[0].idMeal}
-//           >
-//             <div>
-//               <img
-//                 className="rounded"
-//                 src={mealDetails.meals[0].strMealThumb}
-//                 alt={mealDetails.meals[0].strMeal}
-//               />
-//             </div>
-//             <div>
-//               <h1 className="text-5xl pb-6">{mealDetails.meals[0].strMeal}</h1>
-//               <p>{mealDetails.meals[0].strArea}</p>
-//               <p>{mealDetails.meals[0].strInstructions}</p>
-//             </div>
-//           </div>
-//         )}
-//       </div>
-//     </>
-//   );
-// }
-
 import Header from "../../components/header/Header";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -161,32 +34,65 @@ export default function DetailsPage() {
       <Header />
       <div className="text-text">
         {loading ? (
-          <div>Loading...</div>
+          <div>Chargement...</div>
         ) : (
-          <div className='max-w-7xl mx-auto'key={mealDetails.idMeal}>
+          <div className="max-w-7xl mx-auto " key={mealDetails.idMeal}>
             <div className="grid grid-cols-2 gap-4 p-12">
               <div>
-                <img src={mealDetails.strMealThumb} alt={mealDetails.strMeal} />
+                <img
+                  className="rounded-md"
+                  src={mealDetails.strMealThumb}
+                  alt={mealDetails.strMeal}
+                />
               </div>
               <div className="space-y-6">
-                <h1 className="text-5xl ">{mealDetails.strMeal}</h1>
+                <h1 className="text-5xl font-bold">{mealDetails.strMeal}</h1>
                 <p>{mealDetails.strInstructions}</p>
-                <iframe
+
+                <div className="space-y-4 bg-uiNormal rounded p-4">
+                  <h3 className="text-2xl font-semibold">Ingredients</h3>
+                  <hr className="text-border " />
+                  <div className="grid grid-cols-2 ">
+                    <div>
+                      <p>{mealDetails.strIngredient1}</p>
+                      <p>{mealDetails.strIngredient2}</p>
+                      <p>{mealDetails.strIngredient3}</p>
+                      <p>{mealDetails.strIngredient4}</p>
+                      <p>{mealDetails.strIngredient5}</p>
+                      <p>{mealDetails.strIngredient6}</p>
+                      <p>{mealDetails.strIngredient7}</p>
+                      <p>{mealDetails.strIngredient8}</p>
+                      <p>{mealDetails.strIngredient9}</p>
+                      <p>{mealDetails.strIngredient10}</p>
+                    </div>
+                    <div>
+                      <p>{mealDetails.strIngredient11}</p>
+                      <p>{mealDetails.strIngredient12}</p>
+                      <p>{mealDetails.strIngredient13}</p>
+                      <p>{mealDetails.strIngredient14}</p>
+                      <p>{mealDetails.strIngredient15}</p>
+                      <p>{mealDetails.strIngredient16}</p>
+                      <p>{mealDetails.strIngredient17}</p>
+                      <p>{mealDetails.strIngredient18}</p>
+                      <p>{mealDetails.strIngredient19}</p>
+                      <p>{mealDetails.strIngredient20}</p>
+                    </div>
+                  </div>
+                </div>
+                {/* <iframe
                   width="560"
                   height="315"
                   src={`https://www.youtube.com/embed/${mealDetails.strYoutube.split("v=")[1]}`}
                   title={mealDetails.strMeal}
               
                   allowFullScreen
-                ></iframe>
-             
+                ></iframe> */}
               </div>
-              
             </div>
-
           </div>
         )}
       </div>
+
     </>
   );
 }

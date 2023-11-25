@@ -17,7 +17,7 @@ export default function IngredientsPage() {
             `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`
           )
           .then((values) => {
-            setSearchResults(values.data.meals); 
+            setSearchResults(values.data.meals);
           });
       } catch (error) {
         console.error(error);
@@ -46,7 +46,6 @@ export default function IngredientsPage() {
               title={result.strMeal}
               imageUrl={result.strMealThumb}
               link={`/details/${result.idMeal}`}
-       
             />
           ))}
         </div>
