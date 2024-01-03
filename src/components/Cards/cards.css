@@ -1,12 +1,6 @@
 .cardsCategory {
   display: grid;
-  /* grid-auto-rows: auto auto ; */
+
 }
 
-/* .product {
-  grid-row: span 2;
 
-  display: grid;
-  grid-template-rows: subgrid;
-}
- */
