@@ -84,13 +84,13 @@ function HomePage() {
 
             <div className="w-full gridCategory  mt-8 p-4 ">
               {sortedCategories.map((category) => (
-            <Cards
-            key={category.idCategory}
-            id={category.idCategory}
-            title={category.strCategory}
-            imageUrl={category.strCategoryThumb}
-            link={`/categories/${category.strCategory}`} // Exemple de lien vers une page de détails
-          />
+                <Cards
+                  key={category.idCategory}
+                  id={category.idCategory}
+                  title={category.strCategory}
+                  imageUrl={category.strCategoryThumb}
+                  link={`/categories/${category.strCategory}`}
+                />
               ))}
             </div>
           </div>

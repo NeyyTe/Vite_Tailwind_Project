@@ -12,6 +12,7 @@ export default function Cards({ id, title, imageUrl, link }) {
         <div className="rounded-b-lg text-text p-4 bg-uiNormal">
           <p>{title}</p>
         </div>
+       
       </div>
     </Link>
   );
